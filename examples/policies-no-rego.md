@@ -35,15 +35,14 @@
 
 **Resources:**
 
-- Any Resource
+* Any Resource
 
 **Parameters:**
 
 * labels: array of string
   Array of required label keys.
 
-This policy allows you to require certain labels are set on a resource. Adapted from https://github.com/open-policy-agent/gatekeeper/blob/master/example/templates/k8srequiredlabels_template.yaml
-
+This policy allows you to require certain labels are set on a resource. Adapted from <https://github.com/open-policy-agent/gatekeeper/blob/master/example/templates/k8srequiredlabels_template.yaml>
 
 _source: [required_labels](required_labels)_
 
@@ -53,15 +52,14 @@ _source: [required_labels](required_labels)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Granting containers privileged capabilities on the node makes it easier
 for containers to escalate their privileges. As such, this is not allowed
 outside of Kubernetes controller namespaces.
-
 
 _source: [container_deny_added_caps](container_deny_added_caps)_
 
@@ -71,14 +69,13 @@ _source: [container_deny_added_caps](container_deny_added_caps)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Privileged containers can much more easily obtain root on the node.
 As such, they are not allowed.
-
 
 _source: [container_deny_escalation](container_deny_escalation)_
 
@@ -88,15 +85,14 @@ _source: [container_deny_escalation](container_deny_escalation)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Privileged containers can easily escalate to root privileges on the node. As
 such containers running as privileged or with sufficient capabilities granted
 to obtain the same effect are not allowed.
-
 
 _source: [container_deny_privileged](container_deny_privileged)_
 
@@ -106,13 +102,12 @@ _source: [container_deny_privileged](container_deny_privileged)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Pods that can change aliases in the host's /etc/hosts file can redirect traffic to malicious servers.
-
 
 _source: [pod_deny_host_alias](pod_deny_host_alias)_
 
@@ -122,14 +117,13 @@ _source: [pod_deny_host_alias](pod_deny_host_alias)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Pods that are allowed to access the host IPC can read memory of
 the other containers, breaking that security boundary.
-
 
 _source: [pod_deny_host_ipc](pod_deny_host_ipc)_
 
@@ -139,14 +133,13 @@ _source: [pod_deny_host_ipc](pod_deny_host_ipc)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Pods that can access the host's network interfaces can potentially
 access and tamper with traffic the pod should not have access to.
-
 
 _source: [pod_deny_host_network](pod_deny_host_network)_
 
@@ -156,15 +149,14 @@ _source: [pod_deny_host_network](pod_deny_host_network)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Pods that can access the host's process tree can view and attempt to
 modify processes outside of their namespace, breaking that security
 boundary.
-
 
 _source: [pod_deny_host_pid](pod_deny_host_pid)_
 
@@ -174,14 +166,13 @@ _source: [pod_deny_host_pid](pod_deny_host_pid)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Pods running as root (uid of 0) can much more easily escalate privileges
 to root on the node. As such, they are not allowed.
-
 
 _source: [pod_deny_without_runasnonroot](pod_deny_without_runasnonroot)_
 
@@ -191,12 +182,11 @@ _source: [pod_deny_without_runasnonroot](pod_deny_without_runasnonroot)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing containers privileged capabilities on the node makes it easier
 for containers to escalate their privileges. As such, this is not allowed
 outside of Kubernetes controller namespaces.
-
 
 _source: [psp_deny_added_caps](psp_deny_added_caps)_
 
@@ -206,11 +196,10 @@ _source: [psp_deny_added_caps](psp_deny_added_caps)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing privileged containers can much more easily obtain root on the node.
 As such, they are not allowed.
-
 
 _source: [psp_deny_escalation](psp_deny_escalation)_
 
@@ -220,11 +209,10 @@ _source: [psp_deny_escalation](psp_deny_escalation)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing pods to can change aliases in the host's /etc/hosts file can
 redirect traffic to malicious servers.
-
 
 _source: [psp_deny_host_alias](psp_deny_host_alias)_
 
@@ -234,11 +222,10 @@ _source: [psp_deny_host_alias](psp_deny_host_alias)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing pods to access the host IPC can read memory of
 the other containers, breaking that security boundary.
-
 
 _source: [psp_deny_host_ipc](psp_deny_host_ipc)_
 
@@ -248,12 +235,11 @@ _source: [psp_deny_host_ipc](psp_deny_host_ipc)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing pods to access the host's process tree can view and attempt to
 modify processes outside of their namespace, breaking that security
 boundary.
-
 
 _source: [psp_deny_host_network](psp_deny_host_network)_
 
@@ -263,12 +249,11 @@ _source: [psp_deny_host_network](psp_deny_host_network)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing pods to access the host's process tree can view and attempt to
 modify processes outside of their namespace, breaking that security
 boundary.
-
 
 _source: [psp_deny_host_pid](psp_deny_host_pid)_
 
@@ -278,11 +263,10 @@ _source: [psp_deny_host_pid](psp_deny_host_pid)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing privileged containers can much more easily obtain root on the node.
 As such, they are not allowed.
-
 
 _source: [psp_deny_privileged](psp_deny_privileged)_
 
@@ -292,29 +276,28 @@ _source: [psp_deny_privileged](psp_deny_privileged)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Using the latest tag on images can cause unexpected problems in production. By specifying a pinned version
 we can have higher confidence that our applications are immutable and do not change unexpectedly.
 
 The following snippet is an example of how to satisfy this requirement:
 
- ```
- apiVersion: apps/v1
- kind: Deployment
- metadata:
-   name: redis
- spec:
-   template:
-     spec:
-       containers:
-         - name: redis
-           image: redis:6.2
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+spec:
+  template:
+    spec:
+      containers:
+        - name: redis
+          image: redis:6.2
 ```
-
 
 _source: [container_deny_latest_tag](container_deny_latest_tag)_
 
@@ -324,14 +307,13 @@ _source: [container_deny_latest_tag](container_deny_latest_tag)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 Resource constraints on containers ensure that a given workload does not take up more resources than it requires
 and potentially starve other applications that need to run.
-
 
 _source: [container_deny_without_resource_constraints](container_deny_without_resource_constraints)_
 
@@ -341,10 +323,9 @@ _source: [container_deny_without_resource_constraints](container_deny_without_re
 
 **Resources:**
 
-- rbac.authorization.k8s.io/Role
+* rbac.authorization.k8s.io/Role
 
 Workloads not running in the exempted namespaces must not use PodSecurityPolicies with privileged permissions.
-
 
 _source: [role_deny_use_privileged_psps](role_deny_use_privileged_psps)_
 
@@ -354,10 +335,10 @@ _source: [role_deny_use_privileged_psps](role_deny_use_privileged_psps)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 **MatchLabels:** is-tenant=true
 
@@ -367,7 +348,6 @@ to obtain the same effect are not allowed if they are labeled as tenant.
 To take advantage of this policy, it must be combined with another policy
 that enforces the 'is-tenant' label.
 
-
 _source: [container_deny_privileged_if_tenant](container_deny_privileged_if_tenant)_
 
 ## P0001: Deprecated Deployment and DaemonSet API
@@ -376,13 +356,12 @@ _source: [container_deny_privileged_if_tenant](container_deny_privileged_if_tena
 
 **Resources:**
 
-- apps/DaemonSet
-- apps/Deployment
+* apps/DaemonSet
+* apps/Deployment
 
 The `extensions/v1beta1 API` has been deprecated in favor of `apps/v1`. Later versions of Kubernetes
 remove this API so to ensure that the Deployment or DaemonSet can be successfully deployed to the cluster,
 the version for both of these resources must be `apps/v1`.
-
 
 _source: [any_warn_deprecated_api_versions](any_warn_deprecated_api_versions)_
 
@@ -392,14 +371,13 @@ _source: [any_warn_deprecated_api_versions](any_warn_deprecated_api_versions)_
 
 **Resources:**
 
-- core/Pod
-- apps/DaemonSet
-- apps/Deployment
-- apps/StatefulSet
+* core/Pod
+* apps/DaemonSet
+* apps/Deployment
+* apps/StatefulSet
 
 In order to prevent persistence in the case of a compromise, it is
 important to make the root filesystem read-only.
-
 
 _source: [container_warn_no_ro_fs](container_warn_no_ro_fs)_
 
@@ -409,11 +387,9 @@ _source: [container_warn_no_ro_fs](container_warn_no_ro_fs)_
 
 **Resources:**
 
-- policy/PodSecurityPolicy
+* policy/PodSecurityPolicy
 
 Allowing pods to access the host's network interfaces can potentially
 access and tamper with traffic the pod should not have access to.
 
-
 _source: [psp_warn_no_ro_fs](psp_warn_no_ro_fs)_
-
